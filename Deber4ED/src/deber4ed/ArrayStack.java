@@ -5,16 +5,32 @@
  */
 package deber4ed;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Juandi
  * @param <E>
  */
-public class ArrayStack<E>{
-    public static final int CAPACITY = 1000;
+public class ArrayStack<E> {
+    public static final int CAPACIDAD = 10;
+    static Object eliminarBase (ArrayStack s){
+        Object tope =  s.pop();
+        if (s.isEmpty()){return tope;}
+        else {
+            Object base = eliminarBase(s);
+            s.push(tope);
+            return base;
+        }        
+    }
+    //Escribir el método estático reemplazarElementos que tenga como argumentos
+    //una pila de enteros y dos números (buscar y reemplazo), de forma que todas
+    //las apariciones del número 'buscar' en la pila sean reemplazadas por el número
+    // de reemplazo.
+    static void reemplazarElementos(ArrayStack s, int n1, int n2){}
     private E[] data;
     private int t = -1;
-    public ArrayStack() {this(CAPACITY);}
+    public ArrayStack() {this(CAPACIDAD);}
     public ArrayStack(int capacity) {
         data = (E[]) new Object[capacity];    
     }    
@@ -35,6 +51,10 @@ public class ArrayStack<E>{
         t--;
         return answer;
     }
-    
+    @Override
+    public String toString() {
+        return Arrays.toString(data);
+    }
+
     
 }
