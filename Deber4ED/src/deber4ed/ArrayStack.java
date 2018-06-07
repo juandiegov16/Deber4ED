@@ -14,6 +14,7 @@ import java.util.Arrays;
  */
 public class ArrayStack<E> {
     public static final int CAPACIDAD = 10;
+    
     static Object eliminarBase (ArrayStack s){
         Object tope =  s.pop();
         if (s.isEmpty()){return tope;}
@@ -22,12 +23,16 @@ public class ArrayStack<E> {
             s.push(tope);
             return base;
         }        
-    }
-    //Escribir el método estático reemplazarElementos que tenga como argumentos
-    //una pila de enteros y dos números (buscar y reemplazo), de forma que todas
-    //las apariciones del número 'buscar' en la pila sean reemplazadas por el número
-    // de reemplazo.
-    static void reemplazarElementos(ArrayStack s, int n1, int n2){}
+    }    
+    
+    static void reemplazarElementos(ArrayStack s, int nBusqueda, int nReemplazo){    
+    for (int i = 0; i<s.data.length;i++){
+      if(s.data[i] != null){  
+        if (s.data[i].equals(nBusqueda)){s.data[i] = nReemplazo;}
+      }   
+        }
+    }    
+    
     private E[] data;
     private int t = -1;
     public ArrayStack() {this(CAPACIDAD);}
@@ -55,6 +60,4 @@ public class ArrayStack<E> {
     public String toString() {
         return Arrays.toString(data);
     }
-
-    
 }

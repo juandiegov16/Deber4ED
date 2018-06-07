@@ -6,6 +6,7 @@
 package deber4ed;
 
 import static deber4ed.ArrayStack.eliminarBase;
+import static deber4ed.ArrayStack.reemplazarElementos;
 
 /**
  *
@@ -21,18 +22,23 @@ public class Principal {
         ArrayStack<Integer> s1;
         s1 = new ArrayStack<>();        
         s1.push(6);
-        s1.push(3);
+        s1.push(5);
         s1.push(1);
         s1.push(4);
-        s1.push(2);
+        s1.push(1);
         s1.push(8);
 
 //Descomentar las 3 líneas posteriores para probar eliminarBase()        
 //        System.out.println(s1.toString());
 //        eliminarBase(s1);
 //        System.out.println(s1.toString());
-        
-        
+
+//Descomentar las 3 líneas posteriores para probar reemplazarElementos()
+//          System.out.println(s1.toString());
+//          reemplazarElementos(s1,1,3);
+//          System.out.println(s1.toString());
+
+
         
     }
 }
